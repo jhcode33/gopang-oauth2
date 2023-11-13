@@ -14,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration;
+import org.springframework.security.oauth2.server.authorization.settings.AuthorizationServerSettings;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 
@@ -45,8 +46,8 @@ public class AuthorizationServerConfig {
     }
     
     @Bean 
-    public ProviderSettings providerSettings() {
-        return ProviderSettings.builder().issuer("http://localhost:9090").build();
+    public AuthorizationServerSettings providerSettings() {
+        return AuthorizationServerSettings.builder().issuer("http://localhost:9090").build();
     }
     
     @Bean

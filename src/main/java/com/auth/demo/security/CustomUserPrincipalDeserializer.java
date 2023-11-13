@@ -29,7 +29,7 @@ public class CustomUserPrincipalDeserializer extends JsonDeserializer<CustomUser
         Boolean enable = readJsonNode(jsonNode, "enable").asBoolean();
         String username = readJsonNode(jsonNode, "username").asText();
         String password = readJsonNode(jsonNode, "password").asText();
-         List<GrantedAuthority> authorities = mapper.readerForListOf(GrantedAuthority.class).readValue(jsonNode.get("authorities"));
+        List<GrantedAuthority> authorities = mapper.readerForListOf(GrantedAuthority.class).readValue(jsonNode.get("authorities"));
         return new CustomUserPrincipal(id, username, password, enable, authorities);
     }
     
