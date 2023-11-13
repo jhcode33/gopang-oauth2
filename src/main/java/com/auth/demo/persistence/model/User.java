@@ -1,10 +1,6 @@
 package com.auth.demo.persistence.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -24,7 +20,7 @@ public class User extends AbstractEntity{
     private String password;
     
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
-    @JoinColumn(name="role_id")    
+    @JoinColumn(name="role_id")
     private Role role;
     
     @Column(name = "active")

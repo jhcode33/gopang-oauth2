@@ -1,7 +1,7 @@
 package com.auth.demo.persistence.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
